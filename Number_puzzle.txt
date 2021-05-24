@@ -1,0 +1,313 @@
+
+package frm;
+
+import java.awt.Button;
+import java.awt.Font;
+import java.awt.Frame;
+import java.awt.Label;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+
+public class frm7 extends WindowAdapter
+{
+    Frame f;
+    Button b1,b2,b3,b4,b5,b6,b7,b8,b9;
+    Font fb,fb1;
+    Label l,win1,win2;
+    String s;
+    
+    frm7()  // number puzzle
+    {
+        f=new Frame();
+        f.setSize(1000,1050);
+        f.setVisible(true);
+        f.setLayout(null);
+        f.addWindowListener(this);
+        
+        fb=new Font("Comic Sans MS", Font.BOLD, 30);
+        fb1=new Font("Forte", Font.ITALIC, 50);
+        
+        l=new Label("Number Puzzle");
+        l.setBounds(325, 100, 600, 50);
+        l.setFont(fb1);
+        f.add(l);
+        
+        b1=new Button("1");
+        b1.setBounds(200,200,200,200);
+        b1.setFont(fb);
+        f.add(b1);
+        b2=new Button("5");
+        b2.setBounds(400,200,200,200);
+        b2.setFont(fb);
+        f.add(b2);
+        b3=new Button("7");
+        b3.setBounds(600,200,200,200);
+        b3.setFont(fb);
+        f.add(b3);
+        b4=new Button("2");
+        b4.setBounds(200, 400, 200, 200);
+        b4.setFont(fb);
+        f.add(b4);
+        b5=new Button("8");
+        b5.setBounds(400, 400, 200, 200);
+        b5.setFont(fb);
+        f.add(b5);
+        b6=new Button("3");
+        b6.setBounds(600,400,200,200);
+        b6.setFont(fb);
+        f.add(b6);
+        b7=new Button("");
+        b7.setBounds(200, 600, 200, 200);
+        b7.setFont(fb);
+        f.add(b7);
+        b8=new Button("6");
+        b8.setBounds(400, 600, 200, 200);
+        b8.setFont(fb);
+        f.add(b8);
+        b9=new Button("4");
+        b9.setBounds(600, 600, 200, 200);
+        b9.setFont(fb);
+        f.add(b9);
+        
+        b1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) 
+            {
+                s=b1.getLabel();
+                if(b2.getLabel()=="")
+                {
+                    b2.setLabel(s);
+                    b1.setLabel("");
+                }
+                if(b4.getLabel()=="")
+                {
+                    b4.setLabel(s);
+                    b1.setLabel("");
+                }
+                win();
+            }
+        });
+        b3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) 
+            {
+                s=b3.getLabel();
+                if(b2.getLabel()=="")
+                {
+                    b2.setLabel(s);
+                    b3.setLabel("");
+                }
+                if(b6.getLabel()=="")
+                {
+                    b6.setLabel(s);
+                    b3.setLabel("");
+                }
+                win();
+            }
+        });
+        b7.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) 
+            {
+                s=b7.getLabel();
+                if(b4.getLabel()=="")
+                {
+                    b4.setLabel(s);
+                    b7.setLabel("");
+                }
+                if(b8.getLabel()=="")
+                {
+                    b8.setLabel(s);
+                    b7.setLabel("");
+                }
+                win();
+            }
+        });
+        b9.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) 
+            {
+                s=b9.getLabel();
+                if(b6.getLabel()=="")
+                {
+                    b6.setLabel(s);
+                    b9.setLabel("");
+                }
+                if(b8.getLabel()=="")
+                {
+                    b8.setLabel(s);
+                    b9.setLabel("");
+                }
+                win();
+            }
+        });
+        
+        b2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) 
+            {
+                s=b2.getLabel();
+                
+                if(b1.getLabel()=="")
+                {
+                    b1.setLabel(s);
+                    b2.setLabel("");
+
+                }   
+                if(b5.getLabel()=="")
+                {
+                    b5.setLabel(s);
+                    b2.setLabel("");
+                }  
+                if(b3.getLabel()=="")
+                {
+                    b3.setLabel(s);
+                    b2.setLabel("");
+                }  
+                win();
+            }
+        });
+        b4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) 
+            {
+                s=b4.getLabel();
+                
+                if(b1.getLabel()=="")
+                {
+                    b1.setLabel(s);
+                    b4.setLabel("");
+
+                }   
+                if(b5.getLabel()=="")
+                {
+                    b5.setLabel(s);
+                    b4.setLabel("");
+                }  
+                if(b7.getLabel()=="")
+                {
+                    b7.setLabel(s);
+                    b4.setLabel("");
+                }  
+                win();
+            }
+        });
+        b6.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) 
+            {
+                s=b6.getLabel();
+                
+                if(b3.getLabel()=="")
+                {
+                    b3.setLabel(s);
+                    b6.setLabel("");
+
+                }   
+                if(b5.getLabel()=="")
+                {
+                    b5.setLabel(s);
+                    b6.setLabel("");
+                }  
+                if(b9.getLabel()=="")
+                {
+                    b9.setLabel(s);
+                    b6.setLabel("");
+                }  
+                win();
+            }
+        });
+        b8.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) 
+            {
+                s=b8.getLabel();
+                
+                if(b7.getLabel()=="")
+                {
+                    b7.setLabel(s);
+                    b8.setLabel("");
+
+                }   
+                if(b5.getLabel()=="")
+                {
+                    b5.setLabel(s);
+                    b8.setLabel("");
+                }  
+                if(b9.getLabel()=="")
+                {
+                    b9.setLabel(s);
+                    b8.setLabel("");
+                }
+                win();
+            }
+        });
+        
+        b5.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) 
+            {
+                s=b5.getLabel();
+                if(b2.getLabel()=="")
+                {
+                    b2.setLabel(s);
+                    b5.setLabel("");
+                }
+                if(b4.getLabel()=="")
+                {
+                    b4.setLabel(s);
+                    b5.setLabel("");
+                }
+                if(b6.getLabel()=="")
+                {
+                    b6.setLabel(s);
+                    b5.setLabel("");
+                }
+                if(b8.getLabel()=="")
+                {
+                    b8.setLabel(s);
+                    b5.setLabel("");
+                }
+                win();
+            }
+        });
+        
+    }
+    
+    void win()
+    {
+        if( (b1.getLabel()=="1") && (b2.getLabel()=="2") && (b3.getLabel()=="3") 
+                && (b4.getLabel()=="4") && (b5.getLabel()=="5") && (b6.getLabel()=="6") 
+                && (b7.getLabel()=="7") && (b8.getLabel()=="8") && (b9.getLabel()=="9") ) 
+        {
+            System.out.println("Congratulations");
+            System.out.println("You are winner");
+            
+            win1=new Label("Congratulations");
+            win1.setBounds(300, 870, 600, 30);
+            win1.setFont(fb1);
+            f.add(win1);
+            win2=new Label("You are winner");
+            win2.setBounds(300, 920, 600, 30);
+            win2.setFont(fb1);
+            f.add(win2);
+        }
+    }   
+    public static void main(String[] args)
+    {
+        frm7 z=new frm7();
+    }
+
+    @Override
+    public void windowClosing(WindowEvent we) 
+    {
+        f.dispose();
+    }
+    
+}
+
+frm7.java
+Displaying frm7.java.
